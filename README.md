@@ -18,7 +18,54 @@
 
 # 다운로드
 그렇다면 다운로드는 어떻게?<br/>
-[이 링크](https://github.com/sungbin5304/KakaoEmoticonParser/raw/master/v1.0.0%20-%20alpha(11)-release.apk)를 클릭하면 자동 다운로드가 진행됩니다!
+[이 링크](https://github.com/sungbin5304/KakaoEmoticonParser/raw/master/v1.0.2%20-%20alpha(13)-release.apk)를 클릭하면 자동 다운로드가 진행됩니다!
+
+### 만약 다운로드가 `.bin` 파일로 될 때!
+이럴때는 [이 링크](https://github.com/sungbin5304/KakaoEmoticonParser/releases/tag/1.0.1)에서 직접 `apk` 파일을 다운받아 보세요!
+
+# 핵심 업데이트 로그
+> 자세한 업데이트 내역은 [릴리즈](https://github.com/sungbin5304/KakaoEmoticonParser/releases)를 참고해 주세요!
+
+### 1.0.0
+앱 최초 업로드
+
+### 1.0.1
+이모티콘 다운과 동시에 미니어 스캐닝 처리 추가
+
+----
+
+# 사용료
+사용료는 **1스타**로 됩니다!<br/>
+가능하시다면 눌러주세요!
+
+# 사용 라이브러리
+1. Anko
+2. Legacy
+3. Kotlin
+4. CoreKtx
+5. AppCompat
+6. FragmentKtx
+7. LifeCycleViewModel 
+8. LifeCycleExtensions
+
+1. Hilt
+2. HiltAndroidX
+
+1. Glide
+2. CardView
+3. ConstraintLayout
+
+1. AndroidUtils
+2. GsonConverter
+3. CrashReporter
+
+1. AnimatorLottie
+2. AnimatorTool
+3. AnimatorYoYo
+
+1. Paging
+
+
 
 # 라이선스
 `카카오톡 이모티콘 추출기`는 [**GPL 3.0**](https://github.com/sungbin5304/KakaoEmoticonParser/blob/master/LICENSE) 라이선스를 따릅니다.
