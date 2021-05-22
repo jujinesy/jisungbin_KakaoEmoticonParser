@@ -1,41 +1,41 @@
 plugins {
     id("com.android.application")
+    id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("kapt")
-    id("name.remal.check-dependency-updates") version "1.2.2"
+    id("name.remal.check-dependency-updates") version "1.1.6"
 }
 
 android {
     compileSdkVersion(Application.compileSdk)
-
     defaultConfig {
         minSdkVersion(Application.minSdk)
         targetSdkVersion(Application.targetSdk)
         versionCode = Application.versionCode
         versionName = Application.versionName
         multiDexEnabled = true
-        setProperty("archivesBaseName", "$versionName ($versionCode)")
-        kapt {
-            arguments {
-                arg("room.schemaLocation", "$projectDir/schemas")
-            }
-        }
+        setProperty("archivesBaseName", "v$versionName($versionCode)")
     }
 
     buildFeatures {
-        compose = true
+        dataBinding = true
+        viewBinding = true
     }
 
-    kapt {
-        correctErrorTypes = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = Versions.Compose.Version
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
     }
 
     sourceSets {
+        getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
         getByName("main").java.srcDirs("src/main/kotlin")
+        getByName("test").java.srcDirs("src/test/kotlin")
     }
 
     packagingOptions {
@@ -49,19 +49,39 @@ android {
 
     kotlinOptions {
         jvmTarget = Application.jvmTarget
-        useIR = true
     }
 }
 
-// Ignored red-line. It's working well.
 dependencies {
-    Dependencies.essential.forEach(::implementation)
-    Dependencies.network.forEach(::implementation)
-    Dependencies.rx.forEach(::implementation)
-    Dependencies.di.forEach(::implementation)
-    Dependencies.ui.forEach(::implementation)
-    Dependencies.util.forEach(::implementation)
-    Dependencies.compose.forEach(::implementation)
-    Dependencies.room.forEach(::implementation)
-    Dependencies.compiler.forEach(::kapt)
+    fun def(vararg dependencies: String) {
+        for (dependency in dependencies) implementation(dependency)
+    }
+
+    def(
+        Dependencies.Essential.Anko,
+        Dependencies.Essential.CoreKtx,
+        Dependencies.Essential.Kotlin,
+
+        Dependencies.Network.Jsoup,
+        Dependencies.Network.OkHttp,
+        Dependencies.Network.Retrofit,
+
+        Dependencies.Rx.RxRetrofit,
+        Dependencies.Rx.Kotlin,
+        Dependencies.Rx.Android,
+
+        Dependencies.Di.Hilt,
+
+        Dependencies.Ui.Glide,
+        Dependencies.Ui.CardView,
+        Dependencies.Ui.Lottie,
+        Dependencies.Ui.SuperBottomSheet,
+        Dependencies.Ui.ConstraintLayout,
+
+        Dependencies.Util.AndroidUtil,
+        Dependencies.Util.CrashReporter
+    )
+
+    kapt(Dependencies.Di.HiltCompiler)
+    kapt(Dependencies.Ui.GlideCompiler)
 }
