@@ -10,6 +10,9 @@
 
 -----
 
+# Dev Version
+`compose` 브랜치에서 최신 버전을 미리 볼 수 있습니다!
+
 # 카카오톡에서 구매한 이모티콘을 다른 SNS에서 쓰고싶다면?
 이 `카카오톡 이모티콘 추출기`를 사용하여 이모티콘을 **사진**으로 얻어보세요!
 
@@ -22,15 +25,15 @@
 
 # 다운로드
 그렇다면 다운로드는 어떻게?<br/>
-[이 링크](https://github.com/sungbin5304/KakaoEmoticonParser/raw/master/v1.1.0(14)-release.apk)를 클릭하면 자동 다운로드가 진행됩니다!
+[이 링크](https://github.com/sungbin5304/KakaoEmoticonParser/releases/download/1.1.1/v1.1.1.15.-release.apk)를 클릭하면 자동 다운로드가 진행됩니다!
 
 ### 만약 다운로드가 `bin` 파일로 될 때?
-이럴때는 [이 링크](https://github.com/sungbin5304/KakaoEmoticonParser/releases/tag/1.1.0)에서 직접 `apk` 파일을 다운받아 보세요!<br/>
+이럴때는 [이 링크](https://github.com/sungbin5304/KakaoEmoticonParser/releases/tag/1.1.1)에서 직접 `apk` 파일을 다운받아 보세요!<br/>
 또는 `bin` 확장자를 `apk` 확장자로 바꿔보세요.
 
 ### 다운로드 주의사항!
 1. 기본 앱을 제거 후 새로 다운받아서 설치해 주세요.
-2. 구글 프로텍터 관련 경고가 뜨면 사용 안함을 선택해 주세요!
+2. 구글 프로텍터 관련 경고가 뜨면 사용 안함을 선택해 주세요.
 
 # 핵심 업데이트 로그
 > 자세한 업데이트 내역은 [릴리즈](https://github.com/sungbin5304/KakaoEmoticonParser/releases)를 참고해 주세요.
@@ -50,6 +53,9 @@
 ### 1.1.0
 메인 기능이 동작하지 않던 오류 수정
 
+### 1.1.1
+다운로드 버튼 그림자가 짤리던 UI 버그 수정
+
 ----
 
 # 사용료
@@ -68,7 +74,8 @@
 1. Glide
 2. CardView
 3. ConstraintLayout
-4. Lottie
+4. SuperBottomSheet
+5. Lottie
 
 ### Utils
 1. AndroidUtils
